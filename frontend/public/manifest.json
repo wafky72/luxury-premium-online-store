@@ -1,0 +1,15 @@
+{
+  "short_name": "Tori Crown",
+  "name": "Tori Crown Luxury Jewelry",
+  "icons": [
+    {
+      "src": "logo.png",
+      "type": "image/png",
+      "sizes": "192x192 512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#0A1128",
+  "background_color": "#FDFCFB"
+}
