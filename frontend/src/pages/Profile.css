@@ -1,0 +1,318 @@
+.profile-page {
+  padding-top: var(--header-height);
+  padding-bottom: var(--space-4xl);
+  min-height: 80vh;
+  background-color: var(--color-background);
+}
+
+.profile-header {
+  text-align: center;
+  padding: var(--space-2xl) 0;
+  background-color: var(--color-warm-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.profile-title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: var(--color-text);
+  margin-bottom: var(--space-xs);
+}
+
+.profile-subtitle {
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+}
+
+.profile-layout {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: var(--space-3xl);
+  margin-top: var(--space-3xl);
+}
+
+/* Sidebar Navigation */
+.profile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.profile-nav__btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  background: transparent;
+  border: none;
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-text-light);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border-radius: var(--radius-sm);
+}
+
+.profile-nav__btn:hover {
+  background-color: var(--color-warm-bg);
+  color: var(--color-text);
+}
+
+.profile-nav__btn.is-active {
+  background-color: var(--color-accent);
+  color: var(--color-background);
+  font-weight: 500;
+}
+
+.profile-nav__btn.is-logout {
+  margin-top: var(--space-xl);
+  color: #d9534f;
+}
+
+.profile-nav__btn.is-logout:hover {
+  background-color: #fdf2f2;
+}
+
+/* Content Area */
+.profile-content {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-2xl);
+}
+
+.profile-section-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Dashboard Cards */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-lg);
+}
+
+.dashboard-card {
+  background: var(--color-warm-bg);
+  padding: var(--space-xl);
+  border-radius: var(--radius-sm);
+  text-align: center;
+  border: 1px solid transparent;
+  transition: border var(--transition-fast);
+}
+
+.dashboard-card:hover {
+  border-color: var(--color-accent);
+}
+
+.dashboard-card__icon {
+  color: var(--color-accent);
+  margin-bottom: var(--space-md);
+}
+
+.dashboard-card__value {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  margin-bottom: var(--space-xs);
+}
+
+.dashboard-card__label {
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Order History */
+.order-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.order-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-lg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  transition: box-shadow var(--transition-fast);
+}
+
+.order-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.order-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.order-card__id {
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.order-card__date {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+}
+
+.order-card__status {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.status-processing { background: #fef3c7; color: #92400e; }
+.status-shipped { background: #e0e7ff; color: #3730a3; }
+.status-delivered { background: #d1fae5; color: #065f46; }
+
+.order-card__total {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.profile-empty {
+  text-align: center;
+  padding: var(--space-3xl) 0;
+  color: var(--color-text-light);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .profile-layout {
+    grid-template-columns: 200px 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-page {
+    padding-bottom: 90px; /* account for BottomNav */
+  }
+
+  .profile-header {
+    padding: var(--space-xl) 0;
+  }
+
+  .profile-title {
+    font-size: 1.75rem;
+  }
+
+  .profile-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    margin-top: var(--space-lg);
+  }
+
+  /* Horizontal scrollable pill tabs */
+  .profile-sidebar {
+    position: sticky;
+    top: var(--header-height);
+    z-index: 10;
+    background: var(--color-background);
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid var(--color-border);
+    margin-left: calc(-1 * var(--space-md));
+    margin-right: calc(-1 * var(--space-md));
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+
+  .profile-nav {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: var(--space-sm);
+    padding-bottom: 2px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .profile-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .profile-nav__btn {
+    white-space: nowrap;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    border-radius: 100px;
+    gap: 6px;
+  }
+
+  .profile-nav__btn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .profile-nav__btn.is-logout {
+    margin-top: 0;
+    margin-left: auto;
+    flex-shrink: 0;
+    color: #d9534f;
+  }
+
+  .profile-nav__btn.is-active {
+    background-color: var(--color-accent);
+    color: var(--color-background);
+  }
+
+  /* Content area */
+  .profile-content {
+    padding: var(--space-lg) var(--space-md);
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+  }
+
+  .profile-section-title {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-lg);
+  }
+
+  /* Dashboard cards */
+  .dashboard-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+  }
+
+  .dashboard-card__value {
+    font-size: 1.5rem;
+  }
+
+  /* Order cards */
+  .order-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .order-card__action {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .profile-nav__btn {
+    padding: 6px 12px;
+    font-size: 0.82rem;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
