@@ -1,0 +1,76 @@
+.tori-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  --banner-height: 0px;
+}
+
+.tori-layout.has-maintenance {
+  --banner-height: 44px;
+}
+
+.tori-layout__main {
+  flex-grow: 1;
+}
+
+/* --- Maintenance Banner --- */
+.tori-maintenance-banner {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  height: var(--banner-height);
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 60;
+  overflow: hidden;
+}
+
+.tori-maintenance-banner__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  width: 100%;
+}
+
+.tori-maintenance-banner__text {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.tori-maintenance-banner__text .separator {
+  opacity: 0.5;
+  font-size: 1.2em;
+}
+
+.tori-maintenance-banner__icon.pulse {
+  animation: banner-pulse 2s infinite ease-in-out;
+}
+
+@keyframes banner-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(0.9); }
+}
+
+@media (max-width: 768px) {
+  .tori-layout.has-maintenance {
+    --banner-height: 52px;
+  }
+  
+  .tori-maintenance-banner__text {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+  }
+  
+  .tori-maintenance-banner__inner {
+    gap: var(--space-sm);
+  }
+}

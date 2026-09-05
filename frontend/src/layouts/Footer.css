@@ -1,0 +1,155 @@
+.tori-footer {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--space-5xl) 0 var(--space-xl);
+  margin-top: auto;
+}
+
+.tori-footer__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: var(--space-3xl);
+  margin-bottom: var(--space-4xl);
+}
+
+.tori-footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.tori-footer__logo-container {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-sm);
+}
+
+.tori-footer__logo-img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
+.tori-footer__logo-text {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  letter-spacing: 0.05em;
+  color: var(--color-white);
+}
+
+.tori-footer__desc {
+  color: var(--color-text-muted);
+  max-width: 320px;
+  font-size: var(--text-sm);
+}
+
+.tori-footer__social {
+  display: flex;
+  gap: var(--space-md);
+  margin-top: var(--space-sm);
+}
+
+.tori-footer__social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background-color: rgba(255, 255, 255, 0.03);
+  color: var(--color-accent); /* Golden color by default */
+  border: 1px solid rgba(197, 160, 89, 0.2);
+  transition: all 0.3s var(--ease-luxury);
+}
+
+.tori-footer__social a:hover {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  border-color: var(--color-accent);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(197, 160, 89, 0.4); /* Golden glow */
+}
+
+.tori-footer__heading {
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-xl);
+}
+
+.tori-footer__links ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.tori-footer__links a {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  transition: color var(--duration-fast);
+}
+
+.tori-footer__links a:hover {
+  color: var(--color-accent);
+}
+
+.tori-footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--space-xl);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+}
+
+.tori-footer__legal {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.tori-footer__legal a:hover {
+  color: var(--color-white);
+}
+
+@media (max-width: 1024px) {
+  .tori-footer__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+  }
+}
+
+@media (max-width: 640px) {
+  .tori-footer {
+    padding: var(--space-3xl) 0 calc(90px + var(--space-xl)); /* clearance for BottomNav */
+  }
+
+  .tori-footer__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .tori-footer__bottom {
+    flex-direction: column;
+    gap: var(--space-md);
+    text-align: center;
+  }
+
+  .tori-footer__legal {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-md);
+  }
+
+  .tori-footer__logo-text {
+    font-size: 1.4rem;
+  }
+
+  .tori-footer__desc {
+    max-width: 100%;
+  }
+}
