@@ -1,0 +1,143 @@
+.tori-unique-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  overflow: hidden;
+  background-color: var(--color-primary);
+}
+
+.tori-unique-loader--full {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Vertical Panels Reveal */
+.tori-unique-loader__bg-panels {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  pointer-events: none;
+}
+
+.tori-unique-loader__panel {
+  width: 50%;
+  height: 100%;
+  background-color: var(--color-primary);
+  position: relative;
+}
+
+/* The Portal & Content */
+.tori-unique-loader__content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.tori-unique-loader__logo-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.tori-unique-loader__portal {
+  position: absolute;
+  top: -40px;
+  width: 160px;
+  height: 160px;
+  border: 1px solid rgba(197, 160, 89, 0.1);
+  border-top-color: var(--color-accent);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.tori-unique-loader__brand-mark {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.tori-unique-loader__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: brightness(1.2);
+}
+
+/* The Light Sweep */
+.tori-unique-loader__shimmer-sweep {
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transform: skewX(-20deg);
+  animation: sweep 2.5s infinite var(--ease-luxury);
+}
+
+@keyframes sweep {
+  0% { left: -150%; }
+  50% { left: 150%; }
+  100% { left: 150%; }
+}
+
+.tori-unique-loader__text-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.tori-unique-loader__name {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-right: -0.3em; /* Compensate for letter spacing */
+}
+
+.tori-unique-loader__tagline {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: rgba(197, 160, 89, 0.6);
+  font-style: italic;
+}
+
+/* Minimalist Progress Line */
+.tori-unique-loader__counter {
+  width: 200px;
+  height: 1px;
+  background-color: rgba(197, 160, 89, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.tori-unique-loader__progress {
+  height: 100%;
+  background-color: var(--color-accent);
+  box-shadow: 0 0 10px var(--color-accent);
+}
+
+/* Exit Animations logic for panels would need to be handled by the parent component or a global state */
